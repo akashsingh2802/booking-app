@@ -1,6 +1,5 @@
 import axios from "axios";
 
-// Create Axios Instance
 const api = axios.create({
   baseURL: "https://demohotelsapi.pythonanywhere.com",
   headers: {
@@ -8,9 +7,6 @@ const api = axios.create({
   },
 });
 
-// =============================
-// Get All Hotels
-// =============================
 export const getHotels = async () => {
   try {
     const response = await api.get("/hotels/");
@@ -21,9 +17,6 @@ export const getHotels = async () => {
   }
 };
 
-// =============================
-// Get Hotel By ID
-// =============================
 export const getHotelById = async (id) => {
   try {
     const response = await api.get(`/hotels/${id}/`);
